@@ -33,5 +33,7 @@ public class Bullet : MonoBehaviour {
 	void HitTarget()
 	{
 		Destroy (gameObject);
+		Enemy enemyComponent = target.gameObject.GetComponent<Enemy> ();
+		enemyComponent.life--;
 	}
 }

@@ -3,16 +3,25 @@
 public class Enemy : MonoBehaviour {
 
 	public float speed = 10f;
+	public int life = 3;
 
 	private Transform target;
+	private Transform gameMaster;
 	private int waveportIndex = 0;
 
-	void Start () {
+	public void UpdateGameMaster(Transform _gameMaster)
+	{
+		gameMaster = _gameMaster;	
+	}
+
+	void Start () 
+	{
 		target = Wavepoints.points[0];
 	}
-	
+
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 		Vector3 dir = target.position - transform.position;
 		transform.Translate (dir.normalized * speed * Time.deltaTime, Space.World);
 	
@@ -20,12 +29,19 @@ public class Enemy : MonoBehaviour {
 		{
 			GetNextWaypoint ();
 		}
+			
+		if (life <= 0) {
+			gameMaster.gameObject.GetComponent<MushroomSpawner> ().DecrementNumberOfEnemies ();
+			Destroy (gameObject);
+		}
 	}
 
 	void GetNextWaypoint()
 	{
 		if (waveportIndex >= Wavepoints.points.Length - 1)
 		{
+			gameMaster.gameObject.GetComponent<MushroomSpawner> ().DecrementNumberOfEnemies ();
+			//TODO Decrement the life of the player
 			Destroy (gameObject);
 			return;
 		}
