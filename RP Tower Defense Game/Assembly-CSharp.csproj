@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{782F5A59-F588-F10F-AE90-A599332D8C4F}</ProjectGuid>
+    <ProjectGuid>{5E1CD26D-1104-2C3E-2B6D-BB8265785D5F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -51,9 +51,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\MushroomSpawner.cs" />
-     <Compile Include="Assets\prefab\Enemy.cs" />
-     <Compile Include="Assets\prefab\Wavepoints.cs" />
+     <Compile Include="Assets\scripts\Bullet.cs" />
+     <Compile Include="Assets\scripts\Enemy.cs" />
+     <Compile Include="Assets\scripts\MushroomSpawner.cs" />
+     <Compile Include="Assets\scripts\Turret.cs" />
+     <Compile Include="Assets\scripts\Wavepoints.cs" />
      <None Include="Assets\Stylized Mushroom\Shader\mushroom.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
