@@ -214,6 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  life: 5
 --- !u!137 &137858755709473462
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -3,7 +3,7 @@
 public class Enemy : MonoBehaviour {
 
 	public float speed = 10f;
-	public int life = 3;
+	public int life = 5;
 
 	private Transform target;
 	private Transform gameMaster;
@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour {
 		if (waveportIndex >= Wavepoints.points.Length - 1)
 		{
 			gameMaster.gameObject.GetComponent<MushroomSpawner> ().DecrementNumberOfEnemies ();
-			//TODO Decrement the life of the player
+			gameMaster.gameObject.GetComponent<MushroomSpawner> ().DecrementNumberOfLifes ();
 			Destroy (gameObject);
 			return;
 		}
