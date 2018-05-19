@@ -22,6 +22,11 @@ public class Enemy : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		if (gameMaster.gameObject.GetComponent<MushroomSpawner> ().IsGameEnded () || 
+			gameMaster.gameObject.GetComponent<MushroomSpawner> ().IsGamePaused ()) 
+		{
+			return;
+		}
 		Vector3 dir = target.position - transform.position;
 		transform.Translate (dir.normalized * speed * Time.deltaTime, Space.World);
 	

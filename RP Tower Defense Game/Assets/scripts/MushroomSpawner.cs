@@ -44,6 +44,16 @@ public class MushroomSpawner : MonoBehaviour {
 		}
 	}
 
+	public bool IsGameEnded()
+	{
+		return gameEnded;
+	}
+
+	public bool IsGamePaused()
+	{
+		return gamePaused;
+	}
+
 	void Start () 
 	{
 		numberOfEnemysForLevel = totalNumberOfEnemys;
@@ -53,12 +63,11 @@ public class MushroomSpawner : MonoBehaviour {
 		gameOverUI.SetActive (false);
 		gamePausedUI.SetActive (false);
 		pauseButton.onClick.RemoveAllListeners();
-		Debug.Log (pauseButton);
 		pauseButton.GetComponent<Button>().onClick.AddListener ((delegate { PauseGame(); }));
 	}
 		
 	void Update () {
-		if (gameEnded || gamePaused) 
+		if (IsGameEnded() || IsGamePaused()) 
 		{
 			return;
 		}

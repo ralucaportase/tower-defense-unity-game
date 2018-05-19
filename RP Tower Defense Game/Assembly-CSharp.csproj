@@ -51,9 +51,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\scripts\BuildManager.cs" />
      <Compile Include="Assets\scripts\Bullet.cs" />
      <Compile Include="Assets\scripts\Enemy.cs" />
      <Compile Include="Assets\scripts\MushroomSpawner.cs" />
+     <Compile Include="Assets\scripts\Node.cs" />
      <Compile Include="Assets\scripts\Turret.cs" />
      <Compile Include="Assets\scripts\Wavepoints.cs" />
      <None Include="Assets\Stylized Mushroom\Shader\mushroom.shader" />
