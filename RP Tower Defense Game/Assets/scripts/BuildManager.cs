@@ -5,7 +5,8 @@ using UnityEngine;
 public class BuildManager : MonoBehaviour {
 	public static BuildManager instance;
 
-	public GameObject standardTurretPrefab;
+	public GameObject firstTurretPrefab;
+	public GameObject secondTurretPrefab;
 
 	private GameObject turretToBuild;
 
@@ -23,9 +24,9 @@ public class BuildManager : MonoBehaviour {
 		return turretToBuild;
 	}
 
-	void Start()
+	public void SetTurretToBuild(GameObject turret)
 	{
-		turretToBuild = standardTurretPrefab;
+		turretToBuild = turret;
 	}
 		
 }
